@@ -165,8 +165,8 @@
         }
 
         .hero-image {
-            flex: 1;
-            height: 300px;
+            height: 100vh!important;
+            width: 100vh!important;
             background-image: url(images/growing-small-homepage.png);
             border-radius: 15px;
             display: flex;
@@ -175,6 +175,7 @@
             color: white;
             font-size: 1.2rem;
             font-weight: bold;
+            background-position : cover;
         }
 
         .hero-content {
@@ -193,6 +194,21 @@
             color: #666;
         }
 
+      .hero-image { 
+          width: 100%; height: auto; /* 高さは自動調整 */ 
+        　max-width: 1200px; /* 最大幅を制限 */ 
+          object-fit: cover; 
+      } /* タブレット用 */ 
+
+　　　@media (max-width: 768px) { 
+       .hero-image { 
+         height: 300px; /* モバイルでは固定高さ */ 
+        } 
+       } /* スマートフォン用 */
+
+      @media (max-width: 480px) { 
+        .hero-image { height: 250px;
+                      } }
         .price-info {
             margin: 1.5rem 0;
         }
