@@ -17,7 +17,7 @@
         /* ===== メイン画像のリセットと比率調整 ===== */
         .hero-image {
             flex: 1;
-            background-image: url(images/small-grow-homepage-easy.jpg
+            background-image: url(images/small-grow-homepage-easy.jpg) ; 
             background-repeat: no-repeat;
             background-position: center;
             border-radius: 15px;
@@ -55,7 +55,7 @@
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #667eea;
+            color: #fff;
             text-decoration: none;
         }
 
@@ -591,7 +591,7 @@
         }
 
         .footer-section a:hover {
-            color: #667eea;
+            color: #fff;
         }
 
         .footer-bottom {
