@@ -4,13 +4,29 @@
             box-sizing: border-box;
         }
 
+        /* ===== フォントベース設定 ===== */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'M PLUS Rounded 1c', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
         }
+
+
+        /* ===== メイン画像のリセットと比率調整 ===== */
+        .hero-image {
+            flex: 1;
+            background-image: url(images/small-grow-homepage-easy.jpg
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 15px;
+            aspect-ratio: 3/4;
+            max-width: 100%;
+            height: auto;
+            }
+
+
 
         .container {
             max-width: 1200px;
@@ -164,56 +180,93 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
 
-        .hero-image {
-            flex: 1;
-            height: 100vh!important;
-            width: 100vh!important;
-            background-image: url(images/growing-small-homepage.png);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
+        /* hero-image 上に移動 */       
+        
+        
+        /* ===== スマホ調整（縦積みレイアウト） ===== */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 2rem 1rem;
+                text-align: center;
+            }
+
+            .hero-image {
+                width: 80%;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .sale-price {
+                font-size: 1.8rem;
+            }
+        }
+
+            /* ===== タイトルのデザイン強化 ===== */
+            .hero-title {
+            font-size: 2.8rem;
             font-weight: bold;
-            background-position : cover;
-            background-repeat : no-repeat;
-        }
+            color: #222;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+            }
 
-        .hero-content {
+            /* ===== 価格の強調 ===== */
+            .sale-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #e74c3c;
+            }
+
+
+            /* ===== セカンダリーボタン（詳細を見る）もラウンド化 ===== */
+            .btn-secondary {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            border-radius: 30px;
+            }        .hero-content {
             flex: 1;
-        }
+            }
 
-        .hero-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
+            .hero-title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+            }
 
-        .hero-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: #666;
-        }
+            .hero-subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+                color: #666;
+            }
 
-      .hero-image { 
-          width: 100%; height: auto; /* 高さは自動調整 */ 
-        　max-width: 1200px; /* 最大幅を制限 */ 
-          object-fit: cover; 
-      } /* タブレット用 */ 
+            .hero-image { 
+                width: 100%; height: auto; /* 高さは自動調整 */ 
+                max-width: 1200px; /* 最大幅を制限 */ 
+                object-fit: cover; 
+            } /* タブレット用 */ 
 
-　　　@media (max-width: 768px) { 
-       .hero-image { 
-         height: 300px; /* モバイルでは固定高さ */ 
-        } 
-       } /* スマートフォン用 */
+        @media (max-width: 768px) { 
+            .hero-image { 
+                height: 300px; /* モバイルでは固定高さ */ 
+                } 
 
-      @media (max-width: 480px) { 
-        .hero-image { height: 250px;
-                      } }
-        .price-info {
-            margin: 1.5rem 0;
-        }
+            } /* スマートフォン用 */
+
+        @media (max-width: 480px) { 
+            .hero-image { height: 250px;
+                        } }
+            .price-info {
+                margin: 1.5rem 0;
+            }
 
         .original-price {
             text-decoration: line-through;
@@ -241,6 +294,29 @@
             gap: 1rem;
             margin-top: 2rem;
         }
+
+        @media (max-width: 768px) {
+                .hero {
+                    flex-direction: column;
+                    padding: 2rem 1rem;
+                    text-align: center;
+                }
+
+                .hero-image {
+                    width: 80%;
+                    aspect-ratio: 3/4;
+                    margin-bottom: 1.5rem;
+                }
+
+                .hero-content {
+                    width: 100%;
+                }
+
+                .hero-actions {
+                    flex-direction: column;
+                   }
+                }
+
 
         /* Quick Categories */
         .quick-categories {
@@ -425,6 +501,29 @@
             font-size: 0.9rem;
             border-radius: 15px;
         }
+
+        .sale-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #e74c3c;
+            }
+
+       /* ===== CTAボタン（今すぐ購入）を目立たせる ===== */
+            .btn-primary {
+            background: #ff7b7b;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            box-shadow: 0 4px 14px rgba(255, 123, 123, 0.4);
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            }
+
+            .btn-primary:hover {
+            background: #e85c5c;
+            transform: translateY(-2px);
+            }
+
 
         /* Features */
         .features {
